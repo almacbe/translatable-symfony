@@ -64,6 +64,13 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
+doctrine_cache:
+    providers:
+        elcodi:
+            type: redis
+        elcodi_configuration:
+            type: redis
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
