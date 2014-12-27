@@ -18,9 +18,10 @@ class ProductType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('slug')
+            ->add('contentNoTranslatable')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

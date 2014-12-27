@@ -42,6 +42,10 @@ class Product
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $contentNoTranslatable;
 
     /**
      * Get id
@@ -120,5 +124,28 @@ class Product
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set contentNoTranslatable
+     *
+     * @param string $contentNoTranslatable
+     * @return Product
+     */
+    public function setContentNoTranslatable($contentNoTranslatable)
+    {
+        $this->contentNoTranslatable = $contentNoTranslatable;
+
+        return $this;
+    }
+
+    /**
+     * Get contentNoTranslatable
+     *
+     * @return string
+     */
+    public function getContentNoTranslatable()
+    {
+        return $this->contentNoTranslatable;
     }
 }

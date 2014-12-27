@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Product list</h1>
+    <h1>{{ 'product.h1'|trans }}</h1>
 
     <table class="records_list">
         <thead>
@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Slug</th>
+                <th>Contentnotranslatable</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.description }}</td>
                 <td>{{ entity.slug }}</td>
+                <td>{{ entity.contentNoTranslatable }}</td>
                 <td>
                 <ul>
                     <li>
