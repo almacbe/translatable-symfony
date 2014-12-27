@@ -19,6 +19,7 @@ class ProductType extends AbstractType
             ->add('description')
             ->add('slug')
             ->add('contentNoTranslatable')
+            ->add('translations')
         ;
     }
 
