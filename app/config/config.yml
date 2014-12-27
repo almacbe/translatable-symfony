@@ -71,3 +71,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+elcodi_entity_translator:
+    auto_translate: true
+    configuration:
+        AppBundle\Entity\Product:
+            alias: product
+            fields:
+                name: ~
+                description: ~
+                slug: ~

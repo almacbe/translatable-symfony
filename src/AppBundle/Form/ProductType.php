@@ -2,15 +2,18 @@
 
 namespace AppBundle\Form;
 
+use Elcodi\Component\EntityTranslator\EventListener\Traits\EntityTranslatableFormTrait;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ProductType extends AbstractType
 {
+    use EntityTranslatableFormTrait;
+
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,6 +23,8 @@ class ProductType extends AbstractType
             ->add('slug')
             ->add('contentNoTranslatable')
         ;
+
+        $builder->addEventSubscriber($this->getEntityTranslatorFormEventListener());
     }
 
     /**

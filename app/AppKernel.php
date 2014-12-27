@@ -10,6 +10,7 @@ class AppKernel extends Kernel
         $bundles = array(
             new AppBundle\AppBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Elcodi\Bundle\EntityTranslatorBundle\ElcodiEntityTranslatorBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
