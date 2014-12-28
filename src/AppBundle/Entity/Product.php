@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Product
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product
 {
+    use ORMBehaviors\Translatable\Translatable;
+
     /**
      * @var integer
      *
@@ -20,27 +23,6 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text")
-     */
-    private $description;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="slug", type="string", length=255)
-     */
-    private $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -58,78 +40,9 @@ class Product
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Product
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     * @return Product
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Product
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
      * Set contentNoTranslatable
      *
-     * @param string $contentNoTranslatable
+     * @param  string  $contentNoTranslatable
      * @return Product
      */
     public function setContentNoTranslatable($contentNoTranslatable)

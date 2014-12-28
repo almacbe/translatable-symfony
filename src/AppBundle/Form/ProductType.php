@@ -10,14 +10,12 @@ class ProductType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('description')
-            ->add('slug')
+            ->add('translations', 'a2lix_translations')
             ->add('contentNoTranslatable')
         ;
     }
