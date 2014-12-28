@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: ../../vendor/knplabs/doctrine-behaviors/config/orm-services.yml }
 
 framework:
     #esi:             ~
@@ -71,3 +72,11 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+a2lix_translation_form:
+    locales: [fr, en, de, es]       # [optional] Array of the translation locales (The default locale have to be excluded). Can also be specified in the form builder.
+    # default_required: false     # [optional] Defaults to false. In this case, translation fields are not mark as required with HTML5.
+    # use_aop: true               # [optional] Defaults to false.
+    # required_locales: [fr]
+    # manager_registry: doctrine
+    # templating: "A2lixTranslationFormBundle::default.html.twig"
